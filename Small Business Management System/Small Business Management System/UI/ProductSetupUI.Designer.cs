@@ -293,7 +293,6 @@
             this.categoryComboBox.Size = new System.Drawing.Size(150, 21);
             this.categoryComboBox.TabIndex = 23;
             this.categoryComboBox.ValueMember = "Code";
-            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
             // 
             // searchTextBox
             // 

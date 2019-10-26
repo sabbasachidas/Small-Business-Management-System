@@ -32,25 +32,27 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.loyaltyPointTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.dateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.customerComboBox = new System.Windows.Forms.ComboBox();
             this.addCustomerBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.categoryComboBox = new System.Windows.Forms.ComboBox();
+            this.addCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.add = new System.Windows.Forms.Button();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.totalAmountTextBox = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.mrpTextBox = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.quantityTextBox = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.availableQuantityTextBox = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.productComboBox = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
+            this.addProductBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.submit = new System.Windows.Forms.Button();
             this.textBox6 = new System.Windows.Forms.TextBox();
@@ -71,6 +73,8 @@
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.addCustomerBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addProductBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
             this.SuspendLayout();
@@ -79,7 +83,7 @@
             // 
             this.groupBox1.Controls.Add(this.loyaltyPointTextBox);
             this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Controls.Add(this.dateTimePicker1);
+            this.groupBox1.Controls.Add(this.dateTimePicker);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.customerComboBox);
             this.groupBox1.Controls.Add(this.label1);
@@ -106,12 +110,12 @@
             this.label3.TabIndex = 4;
             this.label3.Text = "Loyalty Point";
             // 
-            // dateTimePicker1
+            // dateTimePicker
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(98, 62);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(154, 20);
-            this.dateTimePicker1.TabIndex = 3;
+            this.dateTimePicker.Location = new System.Drawing.Point(98, 62);
+            this.dateTimePicker.Name = "dateTimePicker";
+            this.dateTimePicker.Size = new System.Drawing.Size(154, 20);
+            this.dateTimePicker.TabIndex = 3;
             // 
             // label2
             // 
@@ -131,7 +135,7 @@
             this.customerComboBox.Name = "customerComboBox";
             this.customerComboBox.Size = new System.Drawing.Size(152, 21);
             this.customerComboBox.TabIndex = 1;
-            this.customerComboBox.ValueMember = "Code";
+            this.customerComboBox.ValueMember = "LoyaltyPoint";
             // 
             // addCustomerBindingSource
             // 
@@ -148,18 +152,18 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.categoryComboBox);
             this.groupBox2.Controls.Add(this.add);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.totalAmountTextBox);
             this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.textBox4);
+            this.groupBox2.Controls.Add(this.mrpTextBox);
             this.groupBox2.Controls.Add(this.label8);
-            this.groupBox2.Controls.Add(this.textBox3);
+            this.groupBox2.Controls.Add(this.quantityTextBox);
             this.groupBox2.Controls.Add(this.label7);
-            this.groupBox2.Controls.Add(this.textBox2);
+            this.groupBox2.Controls.Add(this.availableQuantityTextBox);
             this.groupBox2.Controls.Add(this.label6);
-            this.groupBox2.Controls.Add(this.comboBox3);
+            this.groupBox2.Controls.Add(this.productComboBox);
             this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Controls.Add(this.comboBox2);
             this.groupBox2.Controls.Add(this.label4);
             this.groupBox2.Location = new System.Drawing.Point(36, 212);
             this.groupBox2.Name = "groupBox2";
@@ -167,7 +171,23 @@
             this.groupBox2.TabIndex = 1;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Product";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
+            // 
+            // categoryComboBox
+            // 
+            this.categoryComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.addCategoryBindingSource, "CategoryName", true));
+            this.categoryComboBox.DataSource = this.addCategoryBindingSource;
+            this.categoryComboBox.DisplayMember = "CategoryName";
+            this.categoryComboBox.FormattingEnabled = true;
+            this.categoryComboBox.Location = new System.Drawing.Point(100, 23);
+            this.categoryComboBox.Name = "categoryComboBox";
+            this.categoryComboBox.Size = new System.Drawing.Size(150, 21);
+            this.categoryComboBox.TabIndex = 17;
+            this.categoryComboBox.ValueMember = "CategoryCode";
+            this.categoryComboBox.SelectedIndexChanged += new System.EventHandler(this.categoryComboBox_SelectedIndexChanged);
+            // 
+            // addCategoryBindingSource
+            // 
+            this.addCategoryBindingSource.DataSource = typeof(Small_Business_Management_System.AddCategory);
             // 
             // add
             // 
@@ -179,12 +199,13 @@
             this.add.UseVisualStyleBackColor = true;
             this.add.Click += new System.EventHandler(this.add_Click);
             // 
-            // textBox5
+            // totalAmountTextBox
             // 
-            this.textBox5.Location = new System.Drawing.Point(98, 212);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(152, 20);
-            this.textBox5.TabIndex = 15;
+            this.totalAmountTextBox.Location = new System.Drawing.Point(98, 212);
+            this.totalAmountTextBox.Name = "totalAmountTextBox";
+            this.totalAmountTextBox.Size = new System.Drawing.Size(152, 20);
+            this.totalAmountTextBox.TabIndex = 15;
+            this.totalAmountTextBox.Text = "             <View>";
             // 
             // label9
             // 
@@ -195,12 +216,12 @@
             this.label9.TabIndex = 14;
             this.label9.Text = "Total (Tk.)";
             // 
-            // textBox4
+            // mrpTextBox
             // 
-            this.textBox4.Location = new System.Drawing.Point(98, 175);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(152, 20);
-            this.textBox4.TabIndex = 13;
+            this.mrpTextBox.Location = new System.Drawing.Point(98, 175);
+            this.mrpTextBox.Name = "mrpTextBox";
+            this.mrpTextBox.Size = new System.Drawing.Size(152, 20);
+            this.mrpTextBox.TabIndex = 13;
             // 
             // label8
             // 
@@ -211,12 +232,12 @@
             this.label8.TabIndex = 12;
             this.label8.Text = "MRP (Tk.)";
             // 
-            // textBox3
+            // quantityTextBox
             // 
-            this.textBox3.Location = new System.Drawing.Point(98, 139);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(152, 20);
-            this.textBox3.TabIndex = 11;
+            this.quantityTextBox.Location = new System.Drawing.Point(98, 139);
+            this.quantityTextBox.Name = "quantityTextBox";
+            this.quantityTextBox.Size = new System.Drawing.Size(152, 20);
+            this.quantityTextBox.TabIndex = 11;
             // 
             // label7
             // 
@@ -227,12 +248,13 @@
             this.label7.TabIndex = 10;
             this.label7.Text = "Quantity";
             // 
-            // textBox2
+            // availableQuantityTextBox
             // 
-            this.textBox2.Location = new System.Drawing.Point(100, 102);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(152, 20);
-            this.textBox2.TabIndex = 9;
+            this.availableQuantityTextBox.Location = new System.Drawing.Point(100, 102);
+            this.availableQuantityTextBox.Name = "availableQuantityTextBox";
+            this.availableQuantityTextBox.Size = new System.Drawing.Size(152, 20);
+            this.availableQuantityTextBox.TabIndex = 9;
+            this.availableQuantityTextBox.Text = "             <View>";
             // 
             // label6
             // 
@@ -243,13 +265,14 @@
             this.label6.TabIndex = 8;
             this.label6.Text = "Available Quantity";
             // 
-            // comboBox3
+            // productComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(100, 61);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(152, 21);
-            this.comboBox3.TabIndex = 4;
+            this.productComboBox.FormattingEnabled = true;
+            this.productComboBox.Location = new System.Drawing.Point(100, 61);
+            this.productComboBox.Name = "productComboBox";
+            this.productComboBox.Size = new System.Drawing.Size(152, 21);
+            this.productComboBox.TabIndex = 4;
+            this.productComboBox.SelectedIndexChanged += new System.EventHandler(this.productComboBox_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -260,14 +283,6 @@
             this.label5.TabIndex = 3;
             this.label5.Text = "Product";
             // 
-            // comboBox2
-            // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(100, 28);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(152, 21);
-            this.comboBox2.TabIndex = 7;
-            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -276,6 +291,10 @@
             this.label4.Size = new System.Drawing.Size(49, 13);
             this.label4.TabIndex = 6;
             this.label4.Text = "Category";
+            // 
+            // addProductBindingSource
+            // 
+            this.addProductBindingSource.DataSource = typeof(Small_Business_Management_System.AddProduct);
             // 
             // groupBox3
             // 
@@ -312,6 +331,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(152, 20);
             this.textBox6.TabIndex = 24;
+            this.textBox6.Text = "             <View>";
             // 
             // label10
             // 
@@ -328,6 +348,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(152, 20);
             this.textBox7.TabIndex = 22;
+            this.textBox7.Text = "             <View>";
             // 
             // label11
             // 
@@ -344,6 +365,7 @@
             this.textBox8.Name = "textBox8";
             this.textBox8.Size = new System.Drawing.Size(152, 20);
             this.textBox8.TabIndex = 20;
+            this.textBox8.Text = "             <View>";
             // 
             // label12
             // 
@@ -360,6 +382,7 @@
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(152, 20);
             this.textBox9.TabIndex = 18;
+            this.textBox9.Text = "             <View>";
             // 
             // label13
             // 
@@ -459,6 +482,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.addCustomerBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addProductBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
@@ -470,7 +495,7 @@
         #endregion
 
         private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker dateTimePicker;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox customerComboBox;
         private System.Windows.Forms.Label label1;
@@ -478,18 +503,17 @@
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.TextBox loyaltyPointTextBox;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox quantityTextBox;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox availableQuantityTextBox;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox productComboBox;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox2;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button add;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox totalAmountTextBox;
         private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox mrpTextBox;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button submit;
         private System.Windows.Forms.TextBox textBox6;
@@ -508,5 +532,8 @@
         private System.Windows.Forms.TextBox textBox10;
         private System.Windows.Forms.Button search;
         private System.Windows.Forms.BindingSource addCustomerBindingSource;
+        private System.Windows.Forms.ComboBox categoryComboBox;
+        private System.Windows.Forms.BindingSource addCategoryBindingSource;
+        private System.Windows.Forms.BindingSource addProductBindingSource;
     }
 }

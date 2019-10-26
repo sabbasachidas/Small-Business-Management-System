@@ -118,9 +118,6 @@ namespace Small_Business_Management_System
             }
         }
 
-        private void categoryComboBox_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
+        
     }
 }

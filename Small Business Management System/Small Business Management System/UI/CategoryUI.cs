@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Small_Business_Management_System.Manager;
+using Small_Business_Management_System.BLL;
 
 namespace Small_Business_Management_System
 {
@@ -17,14 +19,19 @@ namespace Small_Business_Management_System
             InitializeComponent();
         }
         AddCategory addCategory = new AddCategory();
+        CategoryManager _categoryManager = new CategoryManager();
+
         private void save_Click(object sender, EventArgs e)
         {
-            if (addCategory.isNameExists(categoryCodeTextBox.Text, categoryNameTextBox.Text))
+            addCategory.CategoryCode = categoryCodeTextBox.Text;
+            addCategory.CategoryName = categoryNameTextBox.Text;
+
+            if (_categoryManager.isNameExists(addCategory.CategoryCode, addCategory.CategoryName))
             {
                 MessageBox.Show("Name already exists!!!");
                 return;
             }
-            if (addCategory.isCodeExists(categoryCodeTextBox.Text, categoryNameTextBox.Text))
+            if (_categoryManager.isCodeExists(categoryCodeTextBox.Text, categoryNameTextBox.Text))
             {
                 MessageBox.Show("Code already exists!!!");
                 return;
@@ -40,7 +47,7 @@ namespace Small_Business_Management_System
                 MessageBox.Show("Code must be 4 digit!!!");
                 return;
             }
-            bool isAdded = addCategory.isAdded(categoryCodeTextBox.Text, categoryNameTextBox.Text);
+            bool isAdded = _categoryManager.isAdded(categoryCodeTextBox.Text, categoryNameTextBox.Text);
             if (isAdded)
             {
                 MessageBox.Show("Saved!");
@@ -50,7 +57,7 @@ namespace Small_Business_Management_System
                 MessageBox.Show("Not saved!");
             }
 
-            showDataGridView.DataSource = addCategory.Display();
+            showDataGridView.DataSource = _categoryManager.Display();
         }
 
         private void showDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -65,7 +72,7 @@ namespace Small_Business_Management_System
 
         private void show_Click(object sender, EventArgs e)
         {
-            showDataGridView.DataSource = addCategory.Display();
+            showDataGridView.DataSource = _categoryManager.Display();
         }
 
         private void update_Click(object sender, EventArgs e)
@@ -81,10 +88,10 @@ namespace Small_Business_Management_System
                 return;
             }
 
-            if (addCategory.Update(categoryCodeTextBox.Text, categoryNameTextBox.Text))
+            if (_categoryManager.Update(categoryCodeTextBox.Text, categoryNameTextBox.Text))
             {
                 MessageBox.Show("Updated!");
-                showDataGridView.DataSource = addCategory.Display();
+                showDataGridView.DataSource = _categoryManager.Display();
             }
         }
 
@@ -92,11 +99,11 @@ namespace Small_Business_Management_System
         {
             if (nameRadioButton.Checked)
             {
-                showDataGridView.DataSource = addCategory.SearchName(categorySearchTextBox.Text);
+                showDataGridView.DataSource = _categoryManager.SearchName(categorySearchTextBox.Text);
             }
             else if(codeRadioButton.Checked)
             {
-                showDataGridView.DataSource = addCategory.SearchCode(categorySearchTextBox.Text);
+                showDataGridView.DataSource = _categoryManager.SearchCode(categorySearchTextBox.Text);
             }
             else
             {

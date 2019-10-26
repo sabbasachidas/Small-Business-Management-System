@@ -46,9 +46,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddCategory.cs" />
-    <Compile Include="AddCustomer.cs" />
-    <Compile Include="AddProduct.cs" />
+    <Compile Include="BLL\AddCategory.cs" />
+    <Compile Include="BLL\AddCustomer.cs" />
+    <Compile Include="BLL\AddProduct.cs" />
+    <Compile Include="BLL\AddSales.cs" />
+    <Compile Include="Manager\CategoryManager.cs" />
+    <Compile Include="Manager\SalesManager.cs" />
+    <Compile Include="Model\Sales.cs" />
+    <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\SalesRepository.cs" />
     <Compile Include="UI\CategoryUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -69,7 +75,6 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Sales.cs" />
     <Compile Include="UI\SalesModuleUI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +107,7 @@
     <None Include="Properties\DataSources\AddProduct.datasource" />
     <None Include="Properties\DataSources\CategoryUI.datasource" />
     <None Include="Properties\DataSources\ProductSetupUI.datasource" />
+    <None Include="Properties\DataSources\Sales.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -115,10 +121,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="BLL\" />
-    <Folder Include="Model\" />
-    <Folder Include="Repository\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

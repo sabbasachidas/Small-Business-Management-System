@@ -6,23 +6,17 @@ using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
 
-namespace Small_Business_Management_System
+namespace Small_Business_Management_System.Repository
 {
-    public class AddCategory
+    public class CategoryRepository
     {
-        private string categoryCode;
-        private string categoryName;
-        public string CategoryCode { set; get; }
-        public string CategoryName { set; get; }
-
         public bool isAdded(string categoryCode, string categoryName)
         {
             bool isAdded = false;
 
             try
             {
-                this.categoryCode = categoryCode;
-                this.categoryName = categoryName;
+
                 //Connection
                 string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
@@ -61,9 +55,9 @@ namespace Small_Business_Management_System
 
                 //Command
                 string commandStirng = @"SELECT * FROM Category WHERE Code='" + code + "'";
-                
+
                 SqlCommand sqlCommand = new SqlCommand(commandStirng, sqlConnection);
-                
+
 
                 //Open
                 sqlConnection.Open();
@@ -71,12 +65,12 @@ namespace Small_Business_Management_System
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
-                
+
                 if (dataTable.Rows.Count > 0)
                 {
                     exists = true;
                 }
-                
+
                 //Close
                 sqlConnection.Close();
 
@@ -105,12 +99,12 @@ namespace Small_Business_Management_System
                 SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
                 DataTable dataTable = new DataTable();
                 sqlDataAdapter.Fill(dataTable);
-                
+
                 if (dataTable.Rows.Count > 0)
                 {
                     exists = true;
                 }
-                
+
                 //Close
                 sqlConnection.Close();
 
@@ -183,8 +177,8 @@ namespace Small_Business_Management_System
 
         public DataTable SearchName(string searchInput)
         {
-            
-            
+
+
 
             //Connection
             string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
@@ -201,10 +195,10 @@ namespace Small_Business_Management_System
             DataTable dataTable = new DataTable();
             sqlDataAdapter.Fill(dataTable);
             sqlConnection.Close();
-             return dataTable;
-             
-            
-            
+            return dataTable;
+
+
+
         }
 
         public DataTable SearchCode(string searchInput)
