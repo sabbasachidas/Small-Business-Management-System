@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Small_Business_Management_System.Manager;
 using Small_Business_Management_System.BLL;
-
+using Small_Business_Management_System.UI;
 namespace Small_Business_Management_System
 {
     public partial class CategoryUI : Form
@@ -110,6 +110,12 @@ namespace Small_Business_Management_System
                 MessageBox.Show("Check radio Button");
             }
             //showDataGridView.DataSource = addCategory.Search(categorySearchTextBox.Text);
+        }
+
+        
+        private void homeButton_Click(object sender, EventArgs e)
+        {
+            var homeUI = new HomeUI();
         }
     }
 }

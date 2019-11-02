@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Small_Business_Management_System.Repository;
 
 namespace Small_Business_Management_System
 {
@@ -16,6 +17,7 @@ namespace Small_Business_Management_System
         public string Email { set; get; }
         public string Contact { set; get; }
         public string LoyaltyPoint { set; get; }
+        Connection connection = new Connection();
         public bool CustomerAdd(string code, string name, string address, string email, string contact, string loyaltyPoint)
         {
             bool isAdded = false;
@@ -26,7 +28,7 @@ namespace Small_Business_Management_System
             this.Contact = contact;
             this.LoyaltyPoint = loyaltyPoint;
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             //Command
             string commandStirng = @"INSERT INTO Customer VALUES('" + code + "','" + name + "','" + address + "','" + email + "','" + contact + "','" + loyaltyPoint + "')";
@@ -51,7 +53,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -89,7 +91,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -127,7 +129,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -162,7 +164,7 @@ namespace Small_Business_Management_System
         public DataTable Display()
         {
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -187,7 +189,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -223,7 +225,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -248,7 +250,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -273,7 +275,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command

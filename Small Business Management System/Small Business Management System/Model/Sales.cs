@@ -8,16 +8,24 @@ namespace Small_Business_Management_System.Model
 {
     public class Sales
     {
+        public string SalesCode { set; get; }
         public string Customer { set; get; }
         public string Date { set; get; }
         public string Category { set; get; }
         public string Product { set; get; }
-        public float Quantity { set; get; }
-        public float MRP { set; get; }
-        public float Total { set; get; }
-        public float GrandTotal { set; get; }
-        public float Discount { set; get; }
-        public float DiscountAmount { set; get; }
-        public float PayableAmount { set; get; }
+        public double UnitPrice { set; get; }
+        public int Quantity { set; get; }
+        public double MRP { set; get; }
+        public double Total { set; get; }
+        
+    }
+    public class salesReport
+    {
+        public double GrandTotal { set; get; }
+        public double LoyaltyPoint { set; get; }
+        public double Discount { set; get; }
+        public double DiscountAmount { set; get; }
+        public double PayableAmount { set; get; }
+        
     }
 }

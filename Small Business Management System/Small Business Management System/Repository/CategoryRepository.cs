@@ -10,6 +10,7 @@ namespace Small_Business_Management_System.Repository
 {
     public class CategoryRepository
     {
+        Connection connection = new Connection();
         public bool isAdded(string categoryCode, string categoryName)
         {
             bool isAdded = false;
@@ -18,7 +19,7 @@ namespace Small_Business_Management_System.Repository
             {
 
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
                 //Command
                 string commandStirng = @"INSERT INTO Category VALUES('" + categoryCode + "','" + categoryName + "')";
@@ -50,7 +51,7 @@ namespace Small_Business_Management_System.Repository
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -88,7 +89,7 @@ namespace Small_Business_Management_System.Repository
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString; ;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
                 //Command
                 string commandStirng = @"SELECT * FROM Category WHERE Name='" + name + "'";
@@ -120,7 +121,7 @@ namespace Small_Business_Management_System.Repository
         public DataTable Display()
         {
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -145,7 +146,7 @@ namespace Small_Business_Management_System.Repository
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -181,7 +182,7 @@ namespace Small_Business_Management_System.Repository
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -204,7 +205,7 @@ namespace Small_Business_Management_System.Repository
         public DataTable SearchCode(string searchInput)
         {
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command

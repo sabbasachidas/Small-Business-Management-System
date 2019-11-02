@@ -35,6 +35,9 @@
             this.l1 = new System.Windows.Forms.Label();
             this.save = new System.Windows.Forms.Button();
             this.showDataGridView = new System.Windows.Forms.DataGridView();
+            this.categoryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.show = new System.Windows.Forms.Button();
             this.update = new System.Windows.Forms.Button();
             this.categorySearchTextBox = new System.Windows.Forms.TextBox();
@@ -44,13 +47,11 @@
             this.codeRadioButton = new System.Windows.Forms.RadioButton();
             this.addCategoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.categoryUIBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.addCategoryBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.categoryCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoryNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.homeButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryUIBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // Code
@@ -108,6 +109,22 @@
             this.showDataGridView.Size = new System.Drawing.Size(352, 141);
             this.showDataGridView.TabIndex = 5;
             this.showDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.showDataGridView_CellClick);
+            // 
+            // categoryCodeDataGridViewTextBoxColumn
+            // 
+            this.categoryCodeDataGridViewTextBoxColumn.DataPropertyName = "CategoryCode";
+            this.categoryCodeDataGridViewTextBoxColumn.HeaderText = "CategoryCode";
+            this.categoryCodeDataGridViewTextBoxColumn.Name = "categoryCodeDataGridViewTextBoxColumn";
+            // 
+            // categoryNameDataGridViewTextBoxColumn
+            // 
+            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "CategoryName";
+            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            // 
+            // addCategoryBindingSource1
+            // 
+            this.addCategoryBindingSource1.DataSource = typeof(Small_Business_Management_System.AddCategory);
             // 
             // show
             // 
@@ -185,27 +202,22 @@
             // 
             this.categoryUIBindingSource.DataSource = typeof(Small_Business_Management_System.CategoryUI);
             // 
-            // addCategoryBindingSource1
+            // homeButton
             // 
-            this.addCategoryBindingSource1.DataSource = typeof(Small_Business_Management_System.AddCategory);
-            // 
-            // categoryCodeDataGridViewTextBoxColumn
-            // 
-            this.categoryCodeDataGridViewTextBoxColumn.DataPropertyName = "Code";
-            this.categoryCodeDataGridViewTextBoxColumn.HeaderText = "Code";
-            this.categoryCodeDataGridViewTextBoxColumn.Name = "categoryCodeDataGridViewTextBoxColumn";
-            // 
-            // categoryNameDataGridViewTextBoxColumn
-            // 
-            this.categoryNameDataGridViewTextBoxColumn.DataPropertyName = "Name";
-            this.categoryNameDataGridViewTextBoxColumn.HeaderText = "Name";
-            this.categoryNameDataGridViewTextBoxColumn.Name = "categoryNameDataGridViewTextBoxColumn";
+            this.homeButton.Location = new System.Drawing.Point(140, 12);
+            this.homeButton.Name = "homeButton";
+            this.homeButton.Size = new System.Drawing.Size(86, 26);
+            this.homeButton.TabIndex = 14;
+            this.homeButton.Text = "Home";
+            this.homeButton.UseVisualStyleBackColor = true;
+            this.homeButton.Click += new System.EventHandler(this.homeButton_Click);
             // 
             // CategoryUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(483, 402);
+            this.Controls.Add(this.homeButton);
             this.Controls.Add(this.codeRadioButton);
             this.Controls.Add(this.nameRadioButton);
             this.Controls.Add(this.label1);
@@ -222,9 +234,9 @@
             this.Name = "CategoryUI";
             this.Text = "CategoryUI";
             ((System.ComponentModel.ISupportInitialize)(this.showDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryUIBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addCategoryBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,6 +262,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn categoryNameDataGridViewTextBoxColumn;
         private System.Windows.Forms.BindingSource addCategoryBindingSource1;
+        private System.Windows.Forms.Button homeButton;
     }
 }
 

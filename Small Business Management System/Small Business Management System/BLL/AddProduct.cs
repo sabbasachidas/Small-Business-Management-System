@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using Small_Business_Management_System.Repository;
 
 namespace Small_Business_Management_System
 {
@@ -15,10 +16,11 @@ namespace Small_Business_Management_System
         public string Name { set; get; }
         public int ReorderLevel { set; get; }
         public string Description { set; get; }
+        Connection connection = new Connection();
         public DataTable categoryCombo()
         {
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -46,7 +48,7 @@ namespace Small_Business_Management_System
             this.Description = description;
             bool isAdded = false;
             //connection
-            string connectionString = @"server=desktop-fttbgug\sqlexpress; database=sbms; integrated security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
             
             //command
@@ -72,7 +74,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -110,7 +112,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -145,7 +147,7 @@ namespace Small_Business_Management_System
         public DataTable Display()
         {
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -170,7 +172,7 @@ namespace Small_Business_Management_System
             try
             {
                 //Connection
-                string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+                string connectionString = connection.connectionString;
                 SqlConnection sqlConnection = new SqlConnection(connectionString);
 
                 //Command
@@ -206,7 +208,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -231,7 +233,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command
@@ -256,7 +258,7 @@ namespace Small_Business_Management_System
 
 
             //Connection
-            string connectionString = @"Server=DESKTOP-FTTBGUG\SQLEXPRESS; Database=SBMS; Integrated Security=true";
+            string connectionString = connection.connectionString;
             SqlConnection sqlConnection = new SqlConnection(connectionString);
 
             //Command

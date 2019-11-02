@@ -10,6 +10,9 @@ namespace Small_Business_Management_System.BLL
     public class AddSales
     {
         Sales _sales = new Sales();
+        public  List<Sales> salesList = new List<Sales>();
+        
+        
         
         
     }

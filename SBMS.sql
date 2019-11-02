@@ -53,20 +53,34 @@ SELECT * FROM Product
 
 SELECT Code, Name FROM Product WHERE Category= 'Mobile'
 
+INSERT INTO Product VALUES('Laptop','0002','HP','10','20','2','3','2','18000','21000','16000','HP Laptop')
+
 ///////////////////////////////////////////////////////
+
+DROP TABLE SalesProducts
+
+CREATE TABLE SalesProducts (
+ID INT IDENTITY(1,1),
+SalesCode VARCHAR(10),
+Customer VARCHAR(30),
+Date VARCHAR(15),
+Category VARCHAR(20),
+Product VARCHAR(20),
+Quantity INT,
+MRP FLOAT,
+Total FLOAT,
+)
+
+SELECT * FROM SalesProducts
+
+
+/////////////////////////////////////
 
 DROP TABLE Sales
 CREATE TABLE Sales
 (
 ID INT IDENTITY(1,1),
-Code VARCHAR(10),
-CUstomer VARCHAR(30),
-SalesDate VARCHAR(20),
-Category VARCHAR(20),
-Product VARCHAR(20),
-Quantity FLOAT,
-MRP FLOAT,
-Total FLOAT,
+SalesCode VARCHAR(10),
 GrandTotal FLOAT,
 Discount FLOAT,
 DiscountAmount FLOAT,

@@ -24,3 +24,17 @@ F:\DOT NET\Small-Business-Management-System\Small Business Management System\Sma
 F:\DOT NET\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.csproj.CoreCompileInputs.cache
 F:\DOT NET\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.exe
 F:\DOT NET\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.pdb
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\bin\Debug\Small Business Management System.exe.config
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\bin\Debug\Small Business Management System.exe
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\bin\Debug\Small Business Management System.pdb
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.csprojAssemblyReference.cache
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.CategoryUI.resources
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.CustomerUI.resources
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.ProductSetupUI.resources
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.Properties.Resources.resources
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.SalesModuleUI.resources
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.csproj.GenerateResource.cache
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.csproj.CoreCompileInputs.cache
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.exe
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small Business Management System.pdb
+F:\DOT NET\Dropbox\Small-Business-Management-System\Small Business Management System\Small Business Management System\obj\Debug\Small_Business_Management_System.UI.HomeUI.resources

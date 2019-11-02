@@ -54,6 +54,7 @@
     <Compile Include="Manager\SalesManager.cs" />
     <Compile Include="Model\Sales.cs" />
     <Compile Include="Repository\CategoryRepository.cs" />
+    <Compile Include="Repository\Connection.cs" />
     <Compile Include="Repository\SalesRepository.cs" />
     <Compile Include="UI\CategoryUI.cs">
       <SubType>Form</SubType>
@@ -66,6 +67,12 @@
     </Compile>
     <Compile Include="UI\CustomerUI.Designer.cs">
       <DependentUpon>CustomerUI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\HomeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\HomeUI.Designer.cs">
+      <DependentUpon>HomeUI.cs</DependentUpon>
     </Compile>
     <Compile Include="UI\ProductSetupUI.cs">
       <SubType>Form</SubType>
@@ -86,6 +93,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\CustomerUI.resx">
       <DependentUpon>CustomerUI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\HomeUI.resx">
+      <DependentUpon>HomeUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ProductSetupUI.resx">
       <DependentUpon>ProductSetupUI.cs</DependentUpon>
@@ -108,6 +118,9 @@
     <None Include="Properties\DataSources\CategoryUI.datasource" />
     <None Include="Properties\DataSources\ProductSetupUI.datasource" />
     <None Include="Properties\DataSources\Sales.datasource" />
+    <None Include="Properties\DataSources\Small_Business_Management_System.Model.Sales.datasource" />
+    <None Include="Properties\DataSources\Small_Business_Management_System.Model.salesReport.datasource" />
+    <None Include="Properties\DataSources\Small_Business_Management_System.Repository.SalesRepository.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
